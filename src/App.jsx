@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import styled from "styled-components"
-import Rate from './Components/Rate/Rate'
+import { useState } from "react";
+import styled from "styled-components";
+import Rate from "./Components/Rate/Rate";
 
-
-const Main = styled.div `
-  font-size: 40px;
-`
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
 function App() {
- 
   return (
-    <>
-      <Rate/>
-    </>
-  )
+    <Wrapper>
+      <Rate />
+    </Wrapper>
+  );
 }
 
-export default App
+export default App;
