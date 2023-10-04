@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from "styled-components"
+import Rate from './Components/Rate/Rate'
 
 
 const Main = styled.div `
@@ -9,9 +10,7 @@ function App() {
  
   return (
     <>
-      <Main>
-        hello world
-      </Main>
+      <Rate/>
     </>
   )
 }
