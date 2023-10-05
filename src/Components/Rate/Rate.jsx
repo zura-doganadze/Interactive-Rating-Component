@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -68,9 +68,9 @@ const SubmitButton = styled.button`
   letter-spacing: 2px;
   cursor: pointer;
 `;
-function Rate() {
+function Rate(props) {
   const stars = [1, 2, 3, 4, 5];
-  return (
+   return (
     <Wrapper>
       <StarImg>
         <svg
@@ -93,11 +93,25 @@ function Rate() {
       </Paragrap>
       <ButtonContainer>
         {stars.map((item) => {
-          return <NambersButton>{item}</NambersButton>;
+          return (
+            <NambersButton
+              style={props.number == item ? { backgroundColor: "#fc7614" } : {}}
+              key={item}
+              onClick={() => props.setNumber(item)}
+            >
+              {item}
+            </NambersButton>
+          );
         })}
       </ButtonContainer>
 
-      <SubmitButton>submit</SubmitButton>
+      <SubmitButton
+        onClick={() => {
+          if (props.number) props.setSubmit(true);
+        }}
+      >
+        submit
+      </SubmitButton>
     </Wrapper>
   );
 }
